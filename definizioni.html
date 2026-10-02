@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Definizioni - Classi in Java</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Utilizzo delle Classi in Java</h1>
+<p class="subtitle">Sottotab: Definizione chiara di ciascun punto</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="cosa-serve.html">Cosa serve?</a>
+<a href="pilastri.html">Punti fondamentali</a>
+<a href="definizioni.html" class="active">Definizioni</a>
+<a href="esempi.html">Esempi</a>
+<a href="esempio-package.html">Esempio package</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<h2>Definizioni puntuali</h2>
+<p>Clicca su un pilastro per aprire la definizione (tabs interattivi):</p>
+<div class="tabs">
+<div class="tab-buttons">
+<button class="tab-btn active" data-tab="t1">Incapsulamento</button>
+<button class="tab-btn" data-tab="t2">Ereditarietà</button>
+<button class="tab-btn" data-tab="t3">Polimorfismo</button>
+<button class="tab-btn" data-tab="t4">Astrazione</button>
+</div>
+<div class="tab-content active" id="t1">
+<h3 id="incapsulamento">1. Incapsulamento</h3>
+<p><strong>Definizione:</strong> nascondere gli attributi interni (<code>private</code>) e permettere l'accesso solo tramite metodi pubblici (getter/setter) che controllano i valori.</p>
+<p><strong>Perché:</strong> nessuno può mettere un saldo negativo o un voto pari a 1000 per sbaglio. Il controllo sta in un solo punto.</p>
+<p><strong>Esempio di idea:</strong> il saldo è privato; per cambiarlo devi passare da <code>versa()</code> e <code>preleva()</code>.</p>
+</div>
+<div class="tab-content" id="t2">
+<h3 id="ereditarieta">2. Ereditarietà</h3>
+<p><strong>Definizione:</strong> una classe figlia (<code>extends</code>) eredita attributi e metodi dalla classe padre e può aggiungere o modificare comportamenti.</p>
+<p><strong>Perché:</strong> eviti duplicati. <code>Animale</code> ha <code>nome</code> e <code>mangia()</code>; <code>Cane</code> e <code>Gatto</code> riusano tutto e aggiungono solo il loro verso.</p>
+<p><strong>Attenzione:</strong> usa "è un". Un Cane <em>è un</em> Animale. Non forzare gerarchie finte.</p>
+</div>
+<div class="tab-content" id="t3">
+<h3 id="polimorfismo">3. Polimorfismo</h3>
+<p><strong>Definizione:</strong> oggetti diversi rispondono allo stesso metodo in modo diverso (<code>@Override</code>). Puoi trattarli tutti come tipo padre.</p>
+<p><strong>Perché:</strong> un ciclo solo per far <code>verso()</code> a cani, gatti e uccelli, ognuno col suo suono.</p>
+<p><strong>Due tipi:</strong> override (stesso nome, corpo diverso) e overloading (stesso nome, parametri diversi).</p>
+</div>
+<div class="tab-content" id="t4">
+<h3 id="astrazione">4. Astrazione</h3>
+<p><strong>Definizione:</strong> mostri <em>cosa</em> fa un oggetto, nascondi <em>come</em> lo fa. Con <code>abstract</code> e <code>interface</code> definisci un contratto.</p>
+<p><strong>Perché:</strong> chi usa <code>Veicolo.accelera()</code> non deve sapere se è elettrico o a benzina.</p>
+<p><strong>Esempio:</strong> <code>interface Pagabile { void paga(double importo); }</code> — poi Contanti, Carta e Bonifico la implementano a modo loro.</p>
+</div>
+</div>
+<p><a class="btn" href="esempi.html">Avanti: esempi di codice →</a></p>
+</main>
+<footer><div class="container"><p>Sito didattico statico — Utilizzo delle Classi in Java</p></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

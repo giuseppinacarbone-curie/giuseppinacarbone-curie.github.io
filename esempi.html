@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esempi - Classi in Java</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Utilizzo delle Classi in Java</h1>
+<p class="subtitle">Sottotab: Esempio per ogni punto fondamentale</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="cosa-serve.html">Cosa serve?</a>
+<a href="pilastri.html">Punti fondamentali</a>
+<a href="definizioni.html">Definizioni</a>
+<a href="esempi.html" class="active">Esempi</a>
+<a href="esempio-package.html">Esempio package</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<h2>Un esempio semplice per ogni pilastro</h2>
+<section class="box" id="incapsulamento">
+<h3>1. Incapsulamento — ContoBancario</h3>
+<pre><code>public class ContoBancario {
+    private double saldo; // nessuno lo tocca direttamente
+
+    public ContoBancario(double saldoIniziale) {
+        if (saldoIniziale &gt;= 0) saldo = saldoIniziale;
+    }
+    public double getSaldo() { return saldo; }
+
+    public void versa(double importo) {
+        if (importo &gt; 0) saldo += importo;
+    }
+    public void preleva(double importo) {
+        if (importo &gt; 0 &amp;&amp; importo &lt;= saldo) saldo -= importo;
+        else System.out.println("Prelievo non valido!");
+    }
+}</code></pre>
+<button class="btn small" data-copy="conto">Copia codice</button>
+</section>
+<section class="box" id="ereditarieta">
+<h3>2. Ereditarietà — Animale e Cane</h3>
+<pre><code>public class Animale {
+    String nome;
+    public Animale(String nome) { this.nome = nome; }
+    public void mangia() { System.out.println(nome + " mangia."); }
+}
+
+public class Cane extends Animale {
+    public Cane(String nome) { super(nome); }
+    public void abbaia() { System.out.println(nome + ": Bau!"); }
+}
+// Uso:
+Cane fido = new Cane("Fido");
+fido.mangia();  // ereditato
+fido.abbaia();  // suo</code></pre>
+</section>
+<section class="box" id="polimorfismo">
+<h3>3. Polimorfismo — stesso metodo, versi diversi</h3>
+<pre><code>public class Animale {
+    public void verso() { System.out.println("..."); }
+}
+public class Cane extends Animale {
+    @Override public void verso() { System.out.println("Bau!"); }
+}
+public class Gatto extends Animale {
+    @Override public void verso() { System.out.println("Miao!"); }
+}
+// Uso polimorfo:
+Animale[] animali = { new Cane(), new Gatto() };
+for (Animale a : animali) a.verso(); // Bau! poi Miao!</code></pre>
+</section>
+<section class="box" id="astrazione">
+<h3>4. Astrazione — interfaccia Pagabile</h3>
+<pre><code>public interface Pagabile {
+    void paga(double importo);
+}
+public class Carta implements Pagabile {
+    @Override public void paga(double importo) {
+        System.out.println("Pago " + importo + " euro con carta.");
+    }
+}
+public class Contanti implements Pagabile {
+    @Override public void paga(double importo) {
+        System.out.println("Pago " + importo + " euro in contanti.");
+    }
+}</code></pre>
+</section>
+<p><a class="btn" href="esempio-package.html">Avanti: esempio con più classi →</a></p>
+</main>
+<footer><div class="container"><p>Sito didattico statico — Utilizzo delle Classi in Java</p></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosa serve? - Classi in Java</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Utilizzo delle Classi in Java</h1>
+<p class="subtitle">Tab: Cosa serve?</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="cosa-serve.html" class="active">Cosa serve?</a>
+<a href="pilastri.html">Punti fondamentali</a>
+<a href="definizioni.html">Definizioni</a>
+<a href="esempi.html">Esempi</a>
+<a href="esempio-package.html">Esempio package</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<h2>A cosa servono le classi?</h2>
+<p>Le classi servono a <strong>organizzare il codice</strong> attorno a cose che esistono nel problema da risolvere: uno studente, un conto, un prodotto, un nemico di un videogioco.</p>
+<div class="cards">
+<div class="card"><h3>1. Modellare la realtà</h3><p>Raggruppi <strong>dati</strong> (attributi) e <strong>comportamenti</strong> (metodi) insieme. Es. <code>ContoBancario</code> ha <code>saldo</code> + <code>preleva()</code>.</p></div>
+<div class="card"><h3>2. Evitare ripetizioni</h3><p>Scrivi la classe una volta, crei tanti oggetti con <code>new</code>. Niente copia-incolla.</p></div>
+<div class="card"><h3>3. Riuso ed estensione</h3><p>Con l'ereditarietà riusi codice esistente e lo specializzi.</p></div>
+<div class="card"><h3>4. Proteggere i dati</h3><p>Con l'incapsulamento decidi chi può modificare cosa, evitando errori.</p></div>
+<div class="card"><h3>5. Lavorare in gruppo</h3><p>Ognuno lavora su una classe diversa dello stesso package, con interfacce chiare.</p></div>
+<div class="card"><h3>6. Manutenzione facile</h3><p>Se cambia una regola, la cambi in un solo punto: dentro la classe.</p></div>
+</div>
+<section class="box">
+<h3>Senza classi vs con classi</h3>
+<pre><code>// SENZA classi: dati sparsi
+String nome1 = "Marco"; int voto1 = 8;
+String nome2 = "Sara"; int voto2 = 9;
+
+// CON classi: tutto ordinato
+Studente m = new Studente("Marco");
+Studente s = new Studente("Sara");
+m.stampaPagella();
+s.stampaPagella();</code></pre>
+</section>
+<p><a class="btn" href="pilastri.html">Avanti: i punti fondamentali →</a></p>
+</main>
+<footer><div class="container"><p>Sito didattico statico — Utilizzo delle Classi in Java</p></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

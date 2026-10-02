@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilizzo delle Classi in Java</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Utilizzo delle Classi in Java</h1>
+<p class="subtitle">Obiettivo: capire perché usare le classi, i 4 pilastri OOP e vederli in azione con esempi semplici</p>
+<nav>
+<a href="index.html" class="active">Home</a>
+<a href="cosa-serve.html">Cosa serve?</a>
+<a href="pilastri.html">Punti fondamentali</a>
+<a href="definizioni.html">Definizioni</a>
+<a href="esempi.html">Esempi</a>
+<a href="esempio-package.html">Esempio package</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<section class="hero">
+<h2>Perché questo sito?</h2>
+<p>Questo sito illustra <strong>l'obiettivo dell'utilizzo delle classi</strong> in un linguaggio di programmazione come Java, presenta <strong>i pilastri della programmazione ad oggetti</strong> e mostra <strong>esempi semplici</strong> e completi.</p>
+<div class="cards">
+<div class="card">
+<h3>1. Cosa serve?</h3>
+<p>A cosa servono davvero le classi: ordine, riuso, modellare la realtà.</p>
+<a class="btn" href="cosa-serve.html">Vai alla pagina</a>
+</div>
+<div class="card">
+<h3>2. Punti fondamentali</h3>
+<p>I 4 pilastri OOP in elenco chiaro: Incapsulamento, Ereditarietà, Polimorfismo, Astrazione.</p>
+<a class="btn" href="pilastri.html">Vai alla pagina</a>
+</div>
+<div class="card">
+<h3>3. Definizioni + Esempi</h3>
+<p>Definizione puntuale di ogni pilastro con codice Java semplice.</p>
+<a class="btn" href="definizioni.html">Vai alle definizioni</a>
+</div>
+<div class="card">
+<h3>4. Più classi insieme</h3>
+<p>Un esempio completo con più classi nello stesso package.</p>
+<a class="btn" href="esempio-package.html">Vai all'esempio</a>
+</div>
+</div>
+</section>
+<section>
+<h2>Struttura del sito</h2>
+<ul>
+<li><strong>Cosa serve?</strong> — l'obiettivo pratico delle classi</li>
+<li><strong>Punti fondamentali</strong> — elenco puntato dei 4 pilastri</li>
+<li><strong>Definizioni</strong> — sottotab: spiegazione chiara di ciascun punto</li>
+<li><strong>Esempi</strong> — sottotab: un esempio per ogni punto</li>
+<li><strong>Esempio package</strong> — sottotab: più classi nello stesso package che collaborano</li>
+</ul>
+</section>
+<section class="box">
+<h2>Classe in 30 secondi</h2>
+<pre><code>public class Studente {
+    String nome;
+    int voto;
+
+    public Studente(String nome) {
+        this.nome = nome;
+    }
+
+    public void promuovi() {
+        voto = 10;
+        System.out.println(nome + " promosso!");
+    }
+}
+
+// Uso:
+Studente s = new Studente("Aisha");
+s.promuovi();</code></pre>
+<p>La <strong>classe</strong> è lo stampo, l'<strong>oggetto</strong> è ciò che crei con quello stampo.</p>
+</section>
+</main>
+<footer>
+<div class="container">
+<p>Sito didattico statico — Utilizzo delle Classi in Java</p>
+</div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

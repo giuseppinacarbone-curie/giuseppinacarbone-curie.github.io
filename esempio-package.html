@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esempio package - Classi in Java</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>Utilizzo delle Classi in Java</h1>
+<p class="subtitle">Sottotab: Esempio semplice con più classi nello stesso package</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="cosa-serve.html">Cosa serve?</a>
+<a href="pilastri.html">Punti fondamentali</a>
+<a href="definizioni.html">Definizioni</a>
+<a href="esempi.html">Esempi</a>
+<a href="esempio-package.html" class="active">Esempio package</a>
+</nav>
+</div>
+</header>
+<main class="container">
+<h2>Mini-progetto: package <code>scuola</code></h2>
+<p>Tre classi che collaborano: <code>Studente</code>, <code>Corso</code>, <code>Registro</code> + classe <code>Main</code> per avviare. Tutte nello stesso package, quindi si vedono senza import.</p>
+<section class="box">
+<h3>File 1: Studente.java</h3>
+<pre><code>package scuola;
+
+public class Studente {
+    private String nome;
+    private int voto;
+
+    public Studente(String nome) { this.nome = nome; }
+
+    public String getNome() { return nome; }
+    public int getVoto() { return voto; }
+
+    public void setVoto(int voto) {
+        if (voto &gt;= 0 &amp;&amp; voto &lt;= 10) this.voto = voto;
+        else System.out.println("Voto non valido per " + nome);
+    }
+}</code></pre>
+</section>
+<section class="box">
+<h3>File 2: Corso.java</h3>
+<pre><code>package scuola;
+import java.util.ArrayList;
+
+public class Corso {
+    private String titolo;
+    private ArrayList&lt;Studente&gt; iscritti = new ArrayList&lt;&gt;();
+
+    public Corso(String titolo) { this.titolo = titolo; }
+
+    public void iscrivi(Studente s) { iscritti.add(s); }
+
+    public void stampaIscritti() {
+        System.out.println("Corso: " + titolo);
+        for (Studente s : iscritti)
+            System.out.println("- " + s.getNome() + " voto: " + s.getVoto());
+    }
+}</code></pre>
+</section>
+<section class="box">
+<h3>File 3: Registro.java</h3>
+<pre><code>package scuola;
+
+public class Registro {
+    public void promuoviTutti(Corso corso) {
+        System.out.println("Registro: appello completato.");
+    }
+    public double media(int... voti) {
+        if (voti.length == 0) return 0;
+        int somma = 0;
+        for (int v : voti) somma += v;
+        return (double) somma / voti.length;
+    }
+}</code></pre>
+</section>
+<section class="box">
+<h3>File 4: Main.java (avvia tutto)</h3>
+<pre><code>package scuola;
+
+public class Main {
+    public static void main(String[] args) {
+        Studente a = new Studente("Aisha");
+        a.setVoto(9);
+        Studente b = new Studente("Marco");
+        b.setVoto(7);
+
+        Corso java = new Corso("Java Base");
+        java.iscrivi(a);
+        java.iscrivi(b);
+        java.stampaIscritti();
+
+        Registro r = new Registro();
+        System.out.println("Media: " + r.media(a.getVoto(), b.getVoto()));
+    }
+}</code></pre>
+</section>
+<section>
+<h3>Cosa osservare</h3>
+<ul>
+<li><strong>Incapsulamento:</strong> <code>voto</code> è privato, passa da <code>setVoto</code> che controlla 0-10.</li>
+<li><strong>Collaborazione:</strong> <code>Corso</code> contiene <code>Studente</code>, <code>Main</code> li usa insieme.</li>
+<li><strong>Package:</strong> tutti i file hanno <code>package scuola;</code> in alto e stanno nella cartella <code>scuola/</code>.</li>
+</ul>
+</section>
+<p><a class="btn" href="index.html">← Torna alla home</a></p>
+</main>
+<footer><div class="container"><p>Sito didattico statico — Utilizzo delle Classi in Java</p></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>
